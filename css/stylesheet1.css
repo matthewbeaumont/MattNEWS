@@ -1,9 +1,10 @@
 /* This is the stylesheet for MattNEWS */
-p {
-  color: red;
-  font-size: medium;
-  background-color: green;
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px none;
 }
+
 .grid {
   display: grid;
   grid-template-columns: 80px 100px auto;
@@ -14,4 +15,8 @@ p {
 .article {
   background-color: brown;
   margin: 5px;
+}
+.story {
+  display: flex;
+  flex: 1 1;
 }
