@@ -4,19 +4,47 @@
   padding: 0px;
   border: 0px none;
 }
+.topnavcontainer {
+  background-color: rgb(187, 25, 25);
+  height: 92px;
+}
+/* Style the links inside the navigation bar */
+.topnav {
+  background-color: rgb(187, 25, 25);
+  height: 92px;
+  widows: 1248px;
+  padding-left: auto;
+  padding-right: auto;
+  color: white;
+  font-family: Helvetica, Arial;
+  font-size: large;
+}
+.topnav ul {
+  list-style-type: none;
+  background-color: rgb(187, 25, 25);
+  overflow: hidden;
+}
+.topnav ul li {
+  display: inline-block;
+  border-bottom: 4px solid royalblue;
+  background-color: rgb(187, 25, 25);
+  padding: 8px;
+  color: white;
+}
+.topnav li a {
+  color: inherit;
+  text-decoration: none;
+  /* Text decoration none removed the default underline for the links */
+  font-size: 14px;
+  font-family: Helvetica, Arial;
+}
 
-.grid {
-  display: grid;
-  grid-template-columns: 80px 100px auto;
-  width: 100%;
-  height: 150px;
-  margin: 10px;
+/* Change the color of links on hover */
+.topnav li:hover {
+  border-bottom: 4px solid white;
 }
-.article {
-  background-color: brown;
-  margin: 5px;
-}
-.story {
-  display: flex;
-  flex: 1 1;
+
+/* Add a color to the active/current link. This is defined by teh class active which is given manually to the anchor element containing the link for the current page.*/
+.topnav li.active {
+  border-bottom: 4px solid white;
 }
