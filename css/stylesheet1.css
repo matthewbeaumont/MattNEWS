@@ -4,31 +4,29 @@
   padding: 0px;
   border: 0px none;
 }
-.topnavcontainer {
-  background-color: rgb(187, 25, 25);
-  height: 92px;
-}
 /* Style the links inside the navigation bar */
 .topnav {
   background-color: rgb(187, 25, 25);
   height: 92px;
-  widows: 1248px;
+  width: 1248px;
   padding-left: auto;
   padding-right: auto;
   color: white;
   font-family: Helvetica, Arial;
   font-size: large;
+  overflow: hidden;
 }
 .topnav ul {
   list-style-type: none;
   background-color: rgb(187, 25, 25);
-  overflow: hidden;
 }
 .topnav ul li {
   display: inline-block;
-  border-bottom: 4px solid royalblue;
+  border-bottom: 4px solid rgb(187, 25, 25);
   background-color: rgb(187, 25, 25);
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  line-height: 18px;
   color: white;
 }
 .topnav li a {
@@ -37,6 +35,13 @@
   /* Text decoration none removed the default underline for the links */
   font-size: 14px;
   font-family: Helvetica, Arial;
+}
+.topnav ul li span {
+  border-left: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 /* Change the color of links on hover */
@@ -47,4 +52,11 @@
 /* Add a color to the active/current link. This is defined by teh class active which is given manually to the anchor element containing the link for the current page.*/
 .topnav li.active {
   border-bottom: 4px solid white;
+}
+.gridnav {
+  display: grid;
+  grid-template-columns: auto 1248px auto;
+}
+.nav-side {
+  background-color: rgb(187, 25, 25);
 }
