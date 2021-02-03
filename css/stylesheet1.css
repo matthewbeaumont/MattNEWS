@@ -5,9 +5,18 @@
   border: 0px none;
   font-family: Helvetica, Arial;
 }
-/* Style the links inside the navigation bar */
+
+body {
+  width: 100%;
+  /* overflow-x: hidden; */
+}
+/* overflow-x:hidden hides content that exceeds the view width of the screen. */
 .topmenu {
   height: 40px;
+}
+.gridnav {
+  display: grid;
+  grid-template-columns: auto 1256px auto;
 }
 .topnav {
   background-color: rgb(187, 25, 25);
@@ -19,6 +28,7 @@
 }
 .topnav ul {
   list-style-type: none;
+  /*  */
   background-color: rgb(187, 25, 25);
 }
 .topnav ul li {
@@ -52,15 +62,13 @@
 .topnav li.active {
   border-bottom: 4px solid white;
 }
-.gridnav {
-  display: grid;
-  grid-template-columns: auto 1256px auto;
-}
+
 .nav-side {
   background-color: rgb(187, 25, 25);
 }
+
 .main-news {
-  grid-column: 2 /3;
+  grid-column: 2 / 3;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 12px;
@@ -71,21 +79,48 @@
 }
 .main-story {
   grid-column: 1 / 2;
-  /* background-color: blue; */
-  /* margin: 6px; */
 }
-.main-story ul {
+.main-story span {
+  font-size: small;
+}
+.main-story p {
+  font-size: 14px;
+  margin: 10px 0px 10px 5px;
+}
+.main-story ul li {
   list-style-position: inside;
   /* list-style-position determines is the bullet points or numbers in a list get placed inside the containing element or outside it. */
+  padding: 6px 0px 6px 0px;
+  font-size: 13px;
+  list-style-type: disc;
 }
 .main-story-image {
   grid-column: 2 / 4;
 }
 .livenews {
   grid-column: 4 / 5;
-  background-color: grey;
-  /* margin: 6px; */
+  background-color: #f2efec;
+  padding: 10px 10px 10px 30px;
+  font-size: 16px;
 }
+.livenews h3 {
+  color: #bb1919;
+}
+.livenews ul {
+  list-style: none;
+}
+.livenews ul li {
+  padding: 10px 0px 10px 0px;
+  color: #bb1919;
+}
+.livenews ul li span {
+  color: black;
+}
+.livenews ul li::before {
+  content: "•";
+  color: #bb1919;
+}
+/* The above CSS uses a pseudoelement ::before which adds a piece of conetnt (in thsi case a bullet point) and then styles it as red.  */
 .topstories {
   grid-column: 5 / 6;
   grid-row: 2 /4;
@@ -99,12 +134,12 @@
   padding-bottom: 8px;
   margin-bottom: 8px;
 }
+/* line height */
 .topstory h4 {
   margin-bottom: 10px;
 }
 .topstory span {
   font-size: small;
-  height: 13px;
 }
 .news-category {
   border-left: 1px solid rgb(213, 208, 205);
@@ -114,40 +149,44 @@
 .sub-story1 {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
-  /* background-color: cyan; */
-  /* margin: 6px; */
 }
 .sub-story2 {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
-  /* background-color: cyan; */
-  /* margin: 6px; */
 }
 .sub-story3 {
   grid-column: 3 / 4;
   grid-row: 3 / 4;
-  /* background-color: cyan; */
-  /* margin: 6px; */
 }
 .sub-story4 {
   grid-column: 4 / 5;
   grid-row: 3 / 4;
-  /* background-color: cyan; */
-  /* margin: 6px; */
 }
+/* .sub-story* span {
+  font-size: small;
+} */
 .covidheader {
   grid-column: 1 / 6;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+/* covid header is causing the horizontal scrolling problems.  */
+/* read about position attribute.  */
+.covidheader hr {
+  height: 1px;
+  width: 25px;
+  color: rgb(150, 40, 40);
+}
+.horizontal-line {
+  border-top: 1px solid black;
+  flex: auto;
+  margin: 0px 16px 0px 16px;
 }
 .coviddeaths {
   grid-column: 1 / 6;
   display: flex;
   flex-wrap: wrap;
-
-  /* margin: 6px; */
-}
-.coviddeaths div {
-  margin: 6px;
+  justify-content: space-between;
 }
