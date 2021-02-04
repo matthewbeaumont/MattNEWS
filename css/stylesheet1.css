@@ -29,7 +29,6 @@
 /* #region Top Navigation Bar */
 .topnav {
   background-color: rgb(187, 25, 25);
-  height: 92px;
   width: 1256px;
   color: white;
   font-size: large;
@@ -57,7 +56,7 @@
 .topnav ul li span {
   border-left: solid;
   border-color: rgba(255, 255, 255, 0.2);
-  /* review why I did this.  */
+  /* The 4th number is the alpha value which is a meausure of transparancy if it was 1 it would be a solid color and if it was 0 it would be white.     */
   border-width: 1px;
   padding-left: 12px;
   padding-right: 12px;
@@ -69,6 +68,8 @@
   padding-left: 12px;
   padding-right: 12px;
 }
+/* remove the left border colour from the first link in the navigation menu. */
+
 /* Change the color of links on hover */
 .topnav li:hover {
   border-bottom: 4px solid white;
