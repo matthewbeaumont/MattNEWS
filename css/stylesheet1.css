@@ -1,34 +1,41 @@
-/* This is the stylesheet for MattNEWS */
+/*#region OVERALL STYLING */
+
 * {
   margin: 0px;
   padding: 0px;
   border: 0px none;
   font-family: Helvetica, Arial;
 }
+/* body {
+  overflow-x: hidden;
+} */
+/* overflow-x:hidden hides content that exceeds the view width of the screen. It can be used as a quick fix if an emement somewhere on the page has overflown */
+/* #endregion OVERALL STYLING */
 
-body {
-  width: 100%;
-  /* overflow-x: hidden; */
-}
-/* overflow-x:hidden hides content that exceeds the view width of the screen. */
 .topmenu {
   height: 40px;
 }
+
+/* #region main grid layout */
 .gridnav {
   display: grid;
   grid-template-columns: auto 1256px auto;
 }
+.nav-side {
+  background-color: rgb(187, 25, 25);
+}
+/* #endregion main grid layout */
+
+/* #region Top Navigation Bar */
 .topnav {
   background-color: rgb(187, 25, 25);
   height: 92px;
   width: 1256px;
   color: white;
   font-size: large;
-  overflow: hidden;
 }
 .topnav ul {
   list-style-type: none;
-  /*  */
   background-color: rgb(187, 25, 25);
 }
 .topnav ul li {
@@ -50,6 +57,14 @@ body {
 .topnav ul li span {
   border-left: solid;
   border-color: rgba(255, 255, 255, 0.2);
+  /* review why I did this.  */
+  border-width: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.topnav ul li:nth-child(1) span {
+  border-left: solid;
+  border-color: rgb(187, 25, 25);
   border-width: 1px;
   padding-left: 12px;
   padding-right: 12px;
@@ -62,30 +77,72 @@ body {
 .topnav li.active {
   border-bottom: 4px solid white;
 }
+/* #endregion Top Navigation Bar*/
 
-.nav-side {
-  background-color: rgb(187, 25, 25);
-}
-
+/* #region Main Content Layout */
 .main-news {
   grid-column: 2 / 3;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  /* Fraction used to avoid need to calculate percentages. */
   grid-gap: 12px;
+  /* Does not include edges of the grid which is desired. */
 }
+/* #endregion Main Content Layout */
+
+/* #region submenu */
 .submenu {
   grid-column: 1 / 6;
   height: 37px;
 }
+.submenu ul {
+  list-style: none;
+}
+.submenu ul li {
+  float: left;
+  border-bottom: 4px solid white;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  line-height: 18px;
+  color: black;
+}
+.submenu li a {
+  color: inherit;
+  text-decoration: none;
+  /* Text decoration none removed the default underline for the links */
+  font-size: 14px;
+}
+.submenu ul li span {
+  border-left: solid;
+  border-color: rgb(220, 220, 220);
+  border-width: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.submenu ul li:nth-child(1) span {
+  border-left: solid;
+  border-color: white;
+  border-width: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.submenu li:hover {
+  border-bottom: 4px solid rgb(187, 25, 25);
+  /* Change the color of links on hover */
+}
+/* #endregion submenu */
+
+/* #region Main Story */
 .main-story {
   grid-column: 1 / 2;
 }
-.main-story span {
-  font-size: small;
-}
 .main-story p {
   font-size: 14px;
-  margin: 10px 0px 10px 5px;
+  margin: 10px 0px 10px 0px;
+}
+.main-story span {
+  font-size: small;
 }
 .main-story ul li {
   list-style-position: inside;
@@ -94,9 +151,18 @@ body {
   font-size: 13px;
   list-style-type: disc;
 }
+.news-category {
+  border-left: 1px solid rgb(213, 208, 205);
+  margin-left: 7px;
+  padding-left: 7px;
+}
+/* The class of news category si used wherever there is the time-category section. */
 .main-story-image {
   grid-column: 2 / 4;
 }
+/* #endregion Main Story */
+
+/* #region Live News */
 .livenews {
   grid-column: 4 / 5;
   background-color: #f2efec;
@@ -112,6 +178,7 @@ body {
 .livenews ul li {
   padding: 10px 0px 10px 0px;
   color: #bb1919;
+  font-size: 14px;
 }
 .livenews ul li span {
   color: black;
@@ -121,50 +188,54 @@ body {
   color: #bb1919;
 }
 /* The above CSS uses a pseudoelement ::before which adds a piece of conetnt (in thsi case a bullet point) and then styles it as red.  */
+/* #endregion Live News*/
+
+/* #region Top Stories */
 .topstories {
   grid-column: 5 / 6;
   grid-row: 2 /4;
   /* background-color: brown; */
   display: flex;
   flex-direction: column;
-  /* margin: 6px; */
 }
+
 .topstory {
   border-bottom: 1px solid rgb(213, 208, 205);
   padding-bottom: 8px;
   margin-bottom: 8px;
 }
-/* line height */
+
 .topstory h4 {
   margin-bottom: 10px;
 }
 .topstory span {
   font-size: small;
 }
-.news-category {
-  border-left: 1px solid rgb(213, 208, 205);
-  margin-left: 7px;
-  padding-left: 7px;
+/* #endregion Top Stories */
+
+/* #region Sub-Story */
+.sub-story p {
+  font-size: 14px;
+  margin: 10px 0px 10px 0px;
+}
+.sub-story span {
+  font-size: small;
 }
 .sub-story1 {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
 }
 .sub-story2 {
   grid-column: 2 / 3;
-  grid-row: 3 / 4;
 }
 .sub-story3 {
   grid-column: 3 / 4;
-  grid-row: 3 / 4;
 }
 .sub-story4 {
   grid-column: 4 / 5;
-  grid-row: 3 / 4;
 }
-/* .sub-story* span {
-  font-size: small;
-} */
+/* #endregion Sub-Story */
+
+/* #region covid */
 .covidheader {
   grid-column: 1 / 6;
   display: flex;
@@ -172,21 +243,18 @@ body {
   justify-content: space-between;
   position: relative;
 }
-/* covid header is causing the horizontal scrolling problems.  */
-/* read about position attribute.  */
-.covidheader hr {
-  height: 1px;
-  width: 25px;
-  color: rgb(150, 40, 40);
-}
+
 .horizontal-line {
   border-top: 1px solid black;
   flex: auto;
   margin: 0px 16px 0px 16px;
 }
+/* The horizontal-line class is used to create the line between the coronovirus heading and the "see all" link. */
 .coviddeaths {
   grid-column: 1 / 6;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+/* Because the size of the images is the same as those in the sub stories which are in grid layour the justify content property arranges the covid stories in the same way on the hrizontal axis so the margins align. */
+/* #endregion covid */
