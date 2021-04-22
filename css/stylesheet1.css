@@ -74,7 +74,7 @@
 .topnav li:hover {
   border-bottom: 4px solid white;
 }
-/* Add a color to the active/current link. This is defined by teh class active which is given manually to the anchor element containing the link for the current page.*/
+/* Add a color to the active/current link. This is defined by the class active which is given manually to the anchor element containing the link for the current page.*/
 .topnav li.active {
   border-bottom: 4px solid white;
 }
